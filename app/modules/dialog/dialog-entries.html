@@ -10,7 +10,7 @@
   <div class="row">
     <ul class="dialog-entries col-xs-12">
       <li class="dialog-entry row"
-          ng-repeat="entry in dialogCtrl.conversation"
+          ng-repeat="entry in dialogCtrl.conversation track by $index"
           ng-if="dialogCtrl.showAll || $last"
           ng-class="{'readonly': dialogCtrl.showAll && !$last}">
         <div class="arrow-down-sm">

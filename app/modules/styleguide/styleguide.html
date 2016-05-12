@@ -13,7 +13,7 @@
     <div class="btn-group" role="group">
       <button type="button"
               class="btn btn-default"
-              ng-repeat="state in ['default', 'listening', 'thinking', 'thinking-complete']"
+              ng-repeat="state in ['default', 'listening', 'thinking', 'thinking-complete'] track by $index"
               ng-click="sgCtrl.avatarState = state"
               ng-class="{'active': sgCtrl.avatarState === state}">
         {{state}}
@@ -118,7 +118,7 @@
 
   <section class="styleguide__components">
     <h3 class="page-header">Components</h3>
-    <div ng-repeat="example in sgCtrl.examples.components">
+    <div ng-repeat="example in sgCtrl.examples.components track by $index">
       <h4>{{example.title}}</h4>
       <p ng-bind-html="example.description"></p>
       <styleguide-example model="example.response"></styleguide-example>
